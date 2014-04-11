@@ -12,14 +12,6 @@ func (n *node) HTML(args ...interface{}) *node {
 	return n.setSibling(NodeArgs(tags.HTML, args...))
 }
 
-func Body(args ...interface{}) *node {
-	return NodeArgs(tags.Body, args...)
-}
-
-func (n *node) Body(args ...interface{}) *node {
-	return n.setSibling(NodeArgs(tags.Body, args...))
-}
-
 func Head(args ...interface{}) *node {
 	return NodeArgs(tags.Head, args...)
 }
@@ -34,6 +26,14 @@ func Title(args ...interface{}) *node {
 
 func (n *node) Title(args ...interface{}) *node {
 	return n.setSibling(NodeArgs(tags.Title, args...))
+}
+
+func Body(args ...interface{}) *node {
+	return NodeArgs(tags.Body, args...)
+}
+
+func (n *node) Body(args ...interface{}) *node {
+	return n.setSibling(NodeArgs(tags.Body, args...))
 }
 
 func Div(args ...interface{}) *node {

@@ -84,9 +84,9 @@ func TestDiv(t *T) {
 }
 
 func TestAttrs(t *T) {
-	div := Div(Attr{"style": "height: 57px;"}).String()
-	if div != `<div style="height: 57px;"></div>` {
-		t.Error("Expected a div with a style attribute, got: ", div)
+	div := Div(Attr{"html": nil, "no": "\"quotes\"", "attr": "value"}).String()
+	if div != `<div html no="quotes" attr="value"></div>` {
+		t.Error("Expected a div with several attributes, got: ", div)
 	}
 }
 
@@ -99,6 +99,48 @@ func TestChildren(t *T) {
 func TestSiblings(t *T) {
 	if div := Div().Span("hey").String(); div != "<div></div><span>hey</span>" {
 		t.Error("Expected a div next to a span with hey, got: ", div)
+	}
+}
+
+func TestAllTags(t *T) {
+	n := Node(tags.Body)
+
+	tag_tests := []struct {
+		name           string
+		handlerWithout func(...interface{}) *node
+		handlerWith    func(...interface{}) *node
+	}{
+		{tags.HTML, HTML, n.HTML},
+		{tags.Head, Head, n.Head},
+		{tags.Title, Title, n.Title},
+		{tags.Body, Body, n.Body},
+		{tags.Div, Div, n.Div},
+		{tags.Span, Span, n.Span},
+	}
+
+	for _, test := range tag_tests {
+		n.Left = nil
+		n.Right = nil
+
+		node := test.handlerWithout()
+		if name := node.Name; name != test.name {
+			t.Errorf("Tag FUNCTION incorrect, expected: %v, got: %v",
+				test.name, name)
+		}
+
+		node = test.handlerWith()
+		if name := node.Name; name != test.name {
+			t.Errorf("Tag METHOD incorrect, expected: %v, got: %v",
+				test.name, name)
+		}
+
+		if n.Right != node {
+			t.Error("Expected the left to have a link to the right:", n.Right)
+		}
+
+		if node.Left != n {
+			t.Error("Expected the right to have a link to the left:", n.Left)
+		}
 	}
 }
 
