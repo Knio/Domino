@@ -9,7 +9,6 @@ import (
 
 type Attr map[string]interface{}
 
-
 type Node interface {
 	String() string
 	StringBuild(*bytes.Buffer)
@@ -17,9 +16,9 @@ type Node interface {
 
 // node is a DOM tree node.
 type DomNode struct {
-	NodeName    string
-	Attrs       Attr
-	Children    []Node
+	NodeName string
+	Attrs    Attr
+	Children []Node
 }
 
 type TextNode struct {
@@ -29,7 +28,7 @@ type TextNode struct {
 // Node constructs a node with a name.
 func MakeDomNode(name string, args ...interface{}) *DomNode {
 	n := &DomNode{
-		NodeName:     name,
+		NodeName: name,
 		Attrs:    make(Attr, 0),
 		Children: make([]Node, 0),
 	}
@@ -51,7 +50,6 @@ func MakeDomNode(name string, args ...interface{}) *DomNode {
 	}
 	return n
 }
-
 
 // NodeArgs constructs a text node.
 func MakeTextNode(value string) *TextNode {
