@@ -3,11 +3,9 @@ package domino
 import (
 	"bytes"
 	"fmt"
-	"github.com/knio/domino/tags"
+	// "github.com/knio/domino/tags"
 	// "strings"
 )
-
-var _ = tags.Title
 
 type Attr map[string]interface{}
 
