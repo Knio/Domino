@@ -17,46 +17,32 @@ type Node interface {
 	StringBuild(*bytes.Buffer)
 }
 
-type DomNode interface {
-	Node
-
-	// DOM Core API
-	appendChild(Node) Node
-	// removeChild(Node) Node
-	setAttribute(key string, value interface{}) DomNode
-
-	// Fluent API
-	Div(args ...interface{}) DomNode
-	Span(args ...interface{}) DomNode
-	Text(string) DomNode
-}
-
 // node is a DOM tree node.
-type domNode struct {
+type DomNode struct {
 	NodeName    string
 	Attrs       Attr
 	Children    []Node
 }
 
-type textNode struct {
+type TextNode struct {
 	Value string
 }
 
 // Node constructs a node with a name.
-func MakeDomNode(name string, args ...interface{}) DomNode {
-	n := &domNode{
+func MakeDomNode(name string, args ...interface{}) *DomNode {
+	n := &DomNode{
 		NodeName:     name,
 		Attrs:    make(Attr, 0),
 		Children: make([]Node, 0),
 	}
 	for _, arg := range args {
 		switch a := arg.(type) {
-		case *domNode:
+		case *DomNode:
 			n.appendChild(a)
-		case *textNode:
+		case *TextNode:
 			n.appendChild(a)
 		case string:
-			n.appendChild(TextNode(a))
+			n.appendChild(MakeTextNode(a))
 		case Attr:
 			for k, v := range a {
 				n.Attrs[k] = v
@@ -70,38 +56,38 @@ func MakeDomNode(name string, args ...interface{}) DomNode {
 
 
 // NodeArgs constructs a text node.
-func TextNode(value string) Node {
-	return &textNode{Value: value}
+func MakeTextNode(value string) *TextNode {
+	return &TextNode{Value: value}
 }
 
 // add a new node to the list of children and return the added node
-func (n *domNode) appendChild(child Node) Node {
+func (n *DomNode) appendChild(child Node) Node {
 	n.Children = append(n.Children, child)
 	return child
 }
 
-func (n *domNode) setAttribute(k string, v interface{}) DomNode {
+func (n *DomNode) setAttribute(k string, v interface{}) *DomNode {
 	n.Attrs[k] = v
 	return n
 }
 
 // returns the HTML for this node and all its ancestors
-func (n *textNode) String() string {
+func (n *TextNode) String() string {
 	return n.Value
 }
 
-func (n *textNode) StringBuild(b *bytes.Buffer) {
+func (n *TextNode) StringBuild(b *bytes.Buffer) {
 	b.WriteString(n.Value)
 }
 
 // returns the HTML for this node and all its ancestors
-func (n *domNode) String() string {
+func (n *DomNode) String() string {
 	b := &bytes.Buffer{}
 	n.StringBuild(b)
 	return b.String()
 }
 
-func (n *domNode) StringBuild(b *bytes.Buffer) {
+func (n *DomNode) StringBuild(b *bytes.Buffer) {
 	b.WriteByte('<')
 	b.WriteString(n.NodeName)
 
@@ -129,8 +115,8 @@ func (n *domNode) StringBuild(b *bytes.Buffer) {
 	b.WriteByte('>')
 }
 
-func (n *domNode) Text(text string) DomNode {
-	n.appendChild(TextNode(text))
+func (n *DomNode) Text(text string) *DomNode {
+	n.appendChild(MakeTextNode(text))
 	return n
 }
 
