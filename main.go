@@ -3,6 +3,7 @@ package domino
 import (
 	"bytes"
 	"fmt"
+	"html"
 	// "github.com/knio/domino/tags"
 	// "strings"
 )
@@ -95,7 +96,7 @@ func (n *DomNode) StringBuild(b *bytes.Buffer) {
 			continue
 		}
 
-		vstr := HTMLEscape(fmt.Sprint(v))
+		vstr := html.EscapeString(fmt.Sprint(v))
 		fmt.Fprintf(b, `%s="%s"`, k, vstr)
 	}
 
@@ -114,8 +115,4 @@ func (n *DomNode) StringBuild(b *bytes.Buffer) {
 func (n *DomNode) Text(text string) *DomNode {
 	n.appendChild(MakeTextNode(text))
 	return n
-}
-
-func HTMLEscape(s string) string {
-	return s
 }
