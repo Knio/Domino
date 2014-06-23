@@ -35,4 +35,3 @@ func TestSiblings(t *testing.T) {
 		t.Error("Expected a span in a div, got: ", div)
 	}
 }
-

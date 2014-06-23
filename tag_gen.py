@@ -1,4 +1,5 @@
 TAGS = '''
+html
 head
 title
 base
@@ -123,7 +124,7 @@ if __name__ == '__main__':
 
     print(
       '''func (n *DomNode) %s(args ...interface{}) *DomNode {
-   n.appendChild(MakeDomNode("%s", args...))
+   n.Add(MakeDomNode("%s", args...))
    return n
 }
 \n\n''' % (fname, tag))

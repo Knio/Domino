@@ -1,11 +1,20 @@
 package domino
 
+func Html(args ...interface{}) *DomNode {
+	return MakeDomNode("html", args...)
+}
+
+func (n *DomNode) Html(args ...interface{}) *DomNode {
+	n.Add(MakeDomNode("html", args...))
+	return n
+}
+
 func Head(args ...interface{}) *DomNode {
 	return MakeDomNode("head", args...)
 }
 
 func (n *DomNode) Head(args ...interface{}) *DomNode {
-	n.appendChild(MakeDomNode("head", args...))
+	n.Add(MakeDomNode("head", args...))
 	return n
 }
 
@@ -14,7 +23,7 @@ func Title(args ...interface{}) *DomNode {
 }
 
 func (n *DomNode) Title(args ...interface{}) *DomNode {
-	n.appendChild(MakeDomNode("title", args...))
+	n.Add(MakeDomNode("title", args...))
 	return n
 }
 
@@ -23,7 +32,7 @@ func Base(args ...interface{}) *DomNode {
 }
 
 func (n *DomNode) Base(args ...interface{}) *DomNode {
-	n.appendChild(MakeDomNode("base", args...))
+	n.Add(MakeDomNode("base", args...))
 	return n
 }
 
@@ -32,7 +41,7 @@ func Link(args ...interface{}) *DomNode {
 }
 
 func (n *DomNode) Link(args ...interface{}) *DomNode {
-	n.appendChild(MakeDomNode("link", args...))
+	n.Add(MakeDomNode("link", args...))
 	return n
 }
 
@@ -41,7 +50,7 @@ func Meta(args ...interface{}) *DomNode {
 }
 
 func (n *DomNode) Meta(args ...interface{}) *DomNode {
-	n.appendChild(MakeDomNode("meta", args...))
+	n.Add(MakeDomNode("meta", args...))
 	return n
 }
 
@@ -50,7 +59,7 @@ func Style(args ...interface{}) *DomNode {
 }
 
 func (n *DomNode) Style(args ...interface{}) *DomNode {
-	n.appendChild(MakeDomNode("style", args...))
+	n.Add(MakeDomNode("style", args...))
 	return n
 }
 
@@ -59,7 +68,7 @@ func Script(args ...interface{}) *DomNode {
 }
 
 func (n *DomNode) Script(args ...interface{}) *DomNode {
-	n.appendChild(MakeDomNode("script", args...))
+	n.Add(MakeDomNode("script", args...))
 	return n
 }
 
@@ -68,7 +77,7 @@ func Noscript(args ...interface{}) *DomNode {
 }
 
 func (n *DomNode) Noscript(args ...interface{}) *DomNode {
-	n.appendChild(MakeDomNode("noscript", args...))
+	n.Add(MakeDomNode("noscript", args...))
 	return n
 }
 
@@ -77,7 +86,7 @@ func Body(args ...interface{}) *DomNode {
 }
 
 func (n *DomNode) Body(args ...interface{}) *DomNode {
-	n.appendChild(MakeDomNode("body", args...))
+	n.Add(MakeDomNode("body", args...))
 	return n
 }
 
@@ -86,7 +95,7 @@ func Section(args ...interface{}) *DomNode {
 }
 
 func (n *DomNode) Section(args ...interface{}) *DomNode {
-	n.appendChild(MakeDomNode("section", args...))
+	n.Add(MakeDomNode("section", args...))
 	return n
 }
 
@@ -95,7 +104,7 @@ func Nav(args ...interface{}) *DomNode {
 }
 
 func (n *DomNode) Nav(args ...interface{}) *DomNode {
-	n.appendChild(MakeDomNode("nav", args...))
+	n.Add(MakeDomNode("nav", args...))
 	return n
 }
 
@@ -104,7 +113,7 @@ func Article(args ...interface{}) *DomNode {
 }
 
 func (n *DomNode) Article(args ...interface{}) *DomNode {
-	n.appendChild(MakeDomNode("article", args...))
+	n.Add(MakeDomNode("article", args...))
 	return n
 }
 
@@ -113,7 +122,7 @@ func Aside(args ...interface{}) *DomNode {
 }
 
 func (n *DomNode) Aside(args ...interface{}) *DomNode {
-	n.appendChild(MakeDomNode("aside", args...))
+	n.Add(MakeDomNode("aside", args...))
 	return n
 }
 
@@ -122,7 +131,7 @@ func H1(args ...interface{}) *DomNode {
 }
 
 func (n *DomNode) H1(args ...interface{}) *DomNode {
-	n.appendChild(MakeDomNode("h1", args...))
+	n.Add(MakeDomNode("h1", args...))
 	return n
 }
 
@@ -131,7 +140,7 @@ func H2(args ...interface{}) *DomNode {
 }
 
 func (n *DomNode) H2(args ...interface{}) *DomNode {
-	n.appendChild(MakeDomNode("h2", args...))
+	n.Add(MakeDomNode("h2", args...))
 	return n
 }
 
@@ -140,7 +149,7 @@ func H3(args ...interface{}) *DomNode {
 }
 
 func (n *DomNode) H3(args ...interface{}) *DomNode {
-	n.appendChild(MakeDomNode("h3", args...))
+	n.Add(MakeDomNode("h3", args...))
 	return n
 }
 
@@ -149,7 +158,7 @@ func H4(args ...interface{}) *DomNode {
 }
 
 func (n *DomNode) H4(args ...interface{}) *DomNode {
-	n.appendChild(MakeDomNode("h4", args...))
+	n.Add(MakeDomNode("h4", args...))
 	return n
 }
 
@@ -158,7 +167,7 @@ func H5(args ...interface{}) *DomNode {
 }
 
 func (n *DomNode) H5(args ...interface{}) *DomNode {
-	n.appendChild(MakeDomNode("h5", args...))
+	n.Add(MakeDomNode("h5", args...))
 	return n
 }
 
@@ -167,7 +176,7 @@ func H6(args ...interface{}) *DomNode {
 }
 
 func (n *DomNode) H6(args ...interface{}) *DomNode {
-	n.appendChild(MakeDomNode("h6", args...))
+	n.Add(MakeDomNode("h6", args...))
 	return n
 }
 
@@ -176,7 +185,7 @@ func Hgroup(args ...interface{}) *DomNode {
 }
 
 func (n *DomNode) Hgroup(args ...interface{}) *DomNode {
-	n.appendChild(MakeDomNode("hgroup", args...))
+	n.Add(MakeDomNode("hgroup", args...))
 	return n
 }
 
@@ -185,7 +194,7 @@ func Header(args ...interface{}) *DomNode {
 }
 
 func (n *DomNode) Header(args ...interface{}) *DomNode {
-	n.appendChild(MakeDomNode("header", args...))
+	n.Add(MakeDomNode("header", args...))
 	return n
 }
 
@@ -194,7 +203,7 @@ func Footer(args ...interface{}) *DomNode {
 }
 
 func (n *DomNode) Footer(args ...interface{}) *DomNode {
-	n.appendChild(MakeDomNode("footer", args...))
+	n.Add(MakeDomNode("footer", args...))
 	return n
 }
 
@@ -203,7 +212,7 @@ func Address(args ...interface{}) *DomNode {
 }
 
 func (n *DomNode) Address(args ...interface{}) *DomNode {
-	n.appendChild(MakeDomNode("address", args...))
+	n.Add(MakeDomNode("address", args...))
 	return n
 }
 
@@ -212,7 +221,7 @@ func P(args ...interface{}) *DomNode {
 }
 
 func (n *DomNode) P(args ...interface{}) *DomNode {
-	n.appendChild(MakeDomNode("p", args...))
+	n.Add(MakeDomNode("p", args...))
 	return n
 }
 
@@ -221,7 +230,7 @@ func Hr(args ...interface{}) *DomNode {
 }
 
 func (n *DomNode) Hr(args ...interface{}) *DomNode {
-	n.appendChild(MakeDomNode("hr", args...))
+	n.Add(MakeDomNode("hr", args...))
 	return n
 }
 
@@ -230,7 +239,7 @@ func Pre(args ...interface{}) *DomNode {
 }
 
 func (n *DomNode) Pre(args ...interface{}) *DomNode {
-	n.appendChild(MakeDomNode("pre", args...))
+	n.Add(MakeDomNode("pre", args...))
 	return n
 }
 
@@ -239,7 +248,7 @@ func Blockquote(args ...interface{}) *DomNode {
 }
 
 func (n *DomNode) Blockquote(args ...interface{}) *DomNode {
-	n.appendChild(MakeDomNode("blockquote", args...))
+	n.Add(MakeDomNode("blockquote", args...))
 	return n
 }
 
@@ -248,7 +257,7 @@ func Ol(args ...interface{}) *DomNode {
 }
 
 func (n *DomNode) Ol(args ...interface{}) *DomNode {
-	n.appendChild(MakeDomNode("ol", args...))
+	n.Add(MakeDomNode("ol", args...))
 	return n
 }
 
@@ -257,7 +266,7 @@ func Ul(args ...interface{}) *DomNode {
 }
 
 func (n *DomNode) Ul(args ...interface{}) *DomNode {
-	n.appendChild(MakeDomNode("ul", args...))
+	n.Add(MakeDomNode("ul", args...))
 	return n
 }
 
@@ -266,7 +275,7 @@ func Li(args ...interface{}) *DomNode {
 }
 
 func (n *DomNode) Li(args ...interface{}) *DomNode {
-	n.appendChild(MakeDomNode("li", args...))
+	n.Add(MakeDomNode("li", args...))
 	return n
 }
 
@@ -275,7 +284,7 @@ func Dl(args ...interface{}) *DomNode {
 }
 
 func (n *DomNode) Dl(args ...interface{}) *DomNode {
-	n.appendChild(MakeDomNode("dl", args...))
+	n.Add(MakeDomNode("dl", args...))
 	return n
 }
 
@@ -284,7 +293,7 @@ func Dt(args ...interface{}) *DomNode {
 }
 
 func (n *DomNode) Dt(args ...interface{}) *DomNode {
-	n.appendChild(MakeDomNode("dt", args...))
+	n.Add(MakeDomNode("dt", args...))
 	return n
 }
 
@@ -293,7 +302,7 @@ func Dd(args ...interface{}) *DomNode {
 }
 
 func (n *DomNode) Dd(args ...interface{}) *DomNode {
-	n.appendChild(MakeDomNode("dd", args...))
+	n.Add(MakeDomNode("dd", args...))
 	return n
 }
 
@@ -302,7 +311,7 @@ func Figure(args ...interface{}) *DomNode {
 }
 
 func (n *DomNode) Figure(args ...interface{}) *DomNode {
-	n.appendChild(MakeDomNode("figure", args...))
+	n.Add(MakeDomNode("figure", args...))
 	return n
 }
 
@@ -311,7 +320,7 @@ func Figcaption(args ...interface{}) *DomNode {
 }
 
 func (n *DomNode) Figcaption(args ...interface{}) *DomNode {
-	n.appendChild(MakeDomNode("figcaption", args...))
+	n.Add(MakeDomNode("figcaption", args...))
 	return n
 }
 
@@ -320,7 +329,7 @@ func Div(args ...interface{}) *DomNode {
 }
 
 func (n *DomNode) Div(args ...interface{}) *DomNode {
-	n.appendChild(MakeDomNode("div", args...))
+	n.Add(MakeDomNode("div", args...))
 	return n
 }
 
@@ -329,7 +338,7 @@ func A(args ...interface{}) *DomNode {
 }
 
 func (n *DomNode) A(args ...interface{}) *DomNode {
-	n.appendChild(MakeDomNode("a", args...))
+	n.Add(MakeDomNode("a", args...))
 	return n
 }
 
@@ -338,7 +347,7 @@ func Em(args ...interface{}) *DomNode {
 }
 
 func (n *DomNode) Em(args ...interface{}) *DomNode {
-	n.appendChild(MakeDomNode("em", args...))
+	n.Add(MakeDomNode("em", args...))
 	return n
 }
 
@@ -347,7 +356,7 @@ func Strong(args ...interface{}) *DomNode {
 }
 
 func (n *DomNode) Strong(args ...interface{}) *DomNode {
-	n.appendChild(MakeDomNode("strong", args...))
+	n.Add(MakeDomNode("strong", args...))
 	return n
 }
 
@@ -356,7 +365,7 @@ func Small(args ...interface{}) *DomNode {
 }
 
 func (n *DomNode) Small(args ...interface{}) *DomNode {
-	n.appendChild(MakeDomNode("small", args...))
+	n.Add(MakeDomNode("small", args...))
 	return n
 }
 
@@ -365,7 +374,7 @@ func S(args ...interface{}) *DomNode {
 }
 
 func (n *DomNode) S(args ...interface{}) *DomNode {
-	n.appendChild(MakeDomNode("s", args...))
+	n.Add(MakeDomNode("s", args...))
 	return n
 }
 
@@ -374,7 +383,7 @@ func Cite(args ...interface{}) *DomNode {
 }
 
 func (n *DomNode) Cite(args ...interface{}) *DomNode {
-	n.appendChild(MakeDomNode("cite", args...))
+	n.Add(MakeDomNode("cite", args...))
 	return n
 }
 
@@ -383,7 +392,7 @@ func Q(args ...interface{}) *DomNode {
 }
 
 func (n *DomNode) Q(args ...interface{}) *DomNode {
-	n.appendChild(MakeDomNode("q", args...))
+	n.Add(MakeDomNode("q", args...))
 	return n
 }
 
@@ -392,7 +401,7 @@ func Dfn(args ...interface{}) *DomNode {
 }
 
 func (n *DomNode) Dfn(args ...interface{}) *DomNode {
-	n.appendChild(MakeDomNode("dfn", args...))
+	n.Add(MakeDomNode("dfn", args...))
 	return n
 }
 
@@ -401,7 +410,7 @@ func Abbr(args ...interface{}) *DomNode {
 }
 
 func (n *DomNode) Abbr(args ...interface{}) *DomNode {
-	n.appendChild(MakeDomNode("abbr", args...))
+	n.Add(MakeDomNode("abbr", args...))
 	return n
 }
 
@@ -410,7 +419,7 @@ func Time(args ...interface{}) *DomNode {
 }
 
 func (n *DomNode) Time(args ...interface{}) *DomNode {
-	n.appendChild(MakeDomNode("time", args...))
+	n.Add(MakeDomNode("time", args...))
 	return n
 }
 
@@ -419,7 +428,7 @@ func Code(args ...interface{}) *DomNode {
 }
 
 func (n *DomNode) Code(args ...interface{}) *DomNode {
-	n.appendChild(MakeDomNode("code", args...))
+	n.Add(MakeDomNode("code", args...))
 	return n
 }
 
@@ -428,7 +437,7 @@ func Var(args ...interface{}) *DomNode {
 }
 
 func (n *DomNode) Var(args ...interface{}) *DomNode {
-	n.appendChild(MakeDomNode("var", args...))
+	n.Add(MakeDomNode("var", args...))
 	return n
 }
 
@@ -437,7 +446,7 @@ func Samp(args ...interface{}) *DomNode {
 }
 
 func (n *DomNode) Samp(args ...interface{}) *DomNode {
-	n.appendChild(MakeDomNode("samp", args...))
+	n.Add(MakeDomNode("samp", args...))
 	return n
 }
 
@@ -446,7 +455,7 @@ func Kbd(args ...interface{}) *DomNode {
 }
 
 func (n *DomNode) Kbd(args ...interface{}) *DomNode {
-	n.appendChild(MakeDomNode("kbd", args...))
+	n.Add(MakeDomNode("kbd", args...))
 	return n
 }
 
@@ -455,7 +464,7 @@ func Sub(args ...interface{}) *DomNode {
 }
 
 func (n *DomNode) Sub(args ...interface{}) *DomNode {
-	n.appendChild(MakeDomNode("sub", args...))
+	n.Add(MakeDomNode("sub", args...))
 	return n
 }
 
@@ -464,7 +473,7 @@ func Sup(args ...interface{}) *DomNode {
 }
 
 func (n *DomNode) Sup(args ...interface{}) *DomNode {
-	n.appendChild(MakeDomNode("sup", args...))
+	n.Add(MakeDomNode("sup", args...))
 	return n
 }
 
@@ -473,7 +482,7 @@ func I(args ...interface{}) *DomNode {
 }
 
 func (n *DomNode) I(args ...interface{}) *DomNode {
-	n.appendChild(MakeDomNode("i", args...))
+	n.Add(MakeDomNode("i", args...))
 	return n
 }
 
@@ -482,7 +491,7 @@ func B(args ...interface{}) *DomNode {
 }
 
 func (n *DomNode) B(args ...interface{}) *DomNode {
-	n.appendChild(MakeDomNode("b", args...))
+	n.Add(MakeDomNode("b", args...))
 	return n
 }
 
@@ -491,7 +500,7 @@ func U(args ...interface{}) *DomNode {
 }
 
 func (n *DomNode) U(args ...interface{}) *DomNode {
-	n.appendChild(MakeDomNode("u", args...))
+	n.Add(MakeDomNode("u", args...))
 	return n
 }
 
@@ -500,7 +509,7 @@ func Mark(args ...interface{}) *DomNode {
 }
 
 func (n *DomNode) Mark(args ...interface{}) *DomNode {
-	n.appendChild(MakeDomNode("mark", args...))
+	n.Add(MakeDomNode("mark", args...))
 	return n
 }
 
@@ -509,7 +518,7 @@ func Ruby(args ...interface{}) *DomNode {
 }
 
 func (n *DomNode) Ruby(args ...interface{}) *DomNode {
-	n.appendChild(MakeDomNode("ruby", args...))
+	n.Add(MakeDomNode("ruby", args...))
 	return n
 }
 
@@ -518,7 +527,7 @@ func Rt(args ...interface{}) *DomNode {
 }
 
 func (n *DomNode) Rt(args ...interface{}) *DomNode {
-	n.appendChild(MakeDomNode("rt", args...))
+	n.Add(MakeDomNode("rt", args...))
 	return n
 }
 
@@ -527,7 +536,7 @@ func Rp(args ...interface{}) *DomNode {
 }
 
 func (n *DomNode) Rp(args ...interface{}) *DomNode {
-	n.appendChild(MakeDomNode("rp", args...))
+	n.Add(MakeDomNode("rp", args...))
 	return n
 }
 
@@ -536,7 +545,7 @@ func Bdi(args ...interface{}) *DomNode {
 }
 
 func (n *DomNode) Bdi(args ...interface{}) *DomNode {
-	n.appendChild(MakeDomNode("bdi", args...))
+	n.Add(MakeDomNode("bdi", args...))
 	return n
 }
 
@@ -545,7 +554,7 @@ func Bdo(args ...interface{}) *DomNode {
 }
 
 func (n *DomNode) Bdo(args ...interface{}) *DomNode {
-	n.appendChild(MakeDomNode("bdo", args...))
+	n.Add(MakeDomNode("bdo", args...))
 	return n
 }
 
@@ -554,7 +563,7 @@ func Span(args ...interface{}) *DomNode {
 }
 
 func (n *DomNode) Span(args ...interface{}) *DomNode {
-	n.appendChild(MakeDomNode("span", args...))
+	n.Add(MakeDomNode("span", args...))
 	return n
 }
 
@@ -563,7 +572,7 @@ func Br(args ...interface{}) *DomNode {
 }
 
 func (n *DomNode) Br(args ...interface{}) *DomNode {
-	n.appendChild(MakeDomNode("br", args...))
+	n.Add(MakeDomNode("br", args...))
 	return n
 }
 
@@ -572,7 +581,7 @@ func Wbr(args ...interface{}) *DomNode {
 }
 
 func (n *DomNode) Wbr(args ...interface{}) *DomNode {
-	n.appendChild(MakeDomNode("wbr", args...))
+	n.Add(MakeDomNode("wbr", args...))
 	return n
 }
 
@@ -581,7 +590,7 @@ func Ins(args ...interface{}) *DomNode {
 }
 
 func (n *DomNode) Ins(args ...interface{}) *DomNode {
-	n.appendChild(MakeDomNode("ins", args...))
+	n.Add(MakeDomNode("ins", args...))
 	return n
 }
 
@@ -590,7 +599,7 @@ func Del(args ...interface{}) *DomNode {
 }
 
 func (n *DomNode) Del(args ...interface{}) *DomNode {
-	n.appendChild(MakeDomNode("del", args...))
+	n.Add(MakeDomNode("del", args...))
 	return n
 }
 
@@ -599,7 +608,7 @@ func Img(args ...interface{}) *DomNode {
 }
 
 func (n *DomNode) Img(args ...interface{}) *DomNode {
-	n.appendChild(MakeDomNode("img", args...))
+	n.Add(MakeDomNode("img", args...))
 	return n
 }
 
@@ -608,7 +617,7 @@ func Iframe(args ...interface{}) *DomNode {
 }
 
 func (n *DomNode) Iframe(args ...interface{}) *DomNode {
-	n.appendChild(MakeDomNode("iframe", args...))
+	n.Add(MakeDomNode("iframe", args...))
 	return n
 }
 
@@ -617,7 +626,7 @@ func Embed(args ...interface{}) *DomNode {
 }
 
 func (n *DomNode) Embed(args ...interface{}) *DomNode {
-	n.appendChild(MakeDomNode("embed", args...))
+	n.Add(MakeDomNode("embed", args...))
 	return n
 }
 
@@ -626,7 +635,7 @@ func Object(args ...interface{}) *DomNode {
 }
 
 func (n *DomNode) Object(args ...interface{}) *DomNode {
-	n.appendChild(MakeDomNode("object", args...))
+	n.Add(MakeDomNode("object", args...))
 	return n
 }
 
@@ -635,7 +644,7 @@ func Param(args ...interface{}) *DomNode {
 }
 
 func (n *DomNode) Param(args ...interface{}) *DomNode {
-	n.appendChild(MakeDomNode("param", args...))
+	n.Add(MakeDomNode("param", args...))
 	return n
 }
 
@@ -644,7 +653,7 @@ func Video(args ...interface{}) *DomNode {
 }
 
 func (n *DomNode) Video(args ...interface{}) *DomNode {
-	n.appendChild(MakeDomNode("video", args...))
+	n.Add(MakeDomNode("video", args...))
 	return n
 }
 
@@ -653,7 +662,7 @@ func Audio(args ...interface{}) *DomNode {
 }
 
 func (n *DomNode) Audio(args ...interface{}) *DomNode {
-	n.appendChild(MakeDomNode("audio", args...))
+	n.Add(MakeDomNode("audio", args...))
 	return n
 }
 
@@ -662,7 +671,7 @@ func Source(args ...interface{}) *DomNode {
 }
 
 func (n *DomNode) Source(args ...interface{}) *DomNode {
-	n.appendChild(MakeDomNode("source", args...))
+	n.Add(MakeDomNode("source", args...))
 	return n
 }
 
@@ -671,7 +680,7 @@ func Track(args ...interface{}) *DomNode {
 }
 
 func (n *DomNode) Track(args ...interface{}) *DomNode {
-	n.appendChild(MakeDomNode("track", args...))
+	n.Add(MakeDomNode("track", args...))
 	return n
 }
 
@@ -680,7 +689,7 @@ func Canvas(args ...interface{}) *DomNode {
 }
 
 func (n *DomNode) Canvas(args ...interface{}) *DomNode {
-	n.appendChild(MakeDomNode("canvas", args...))
+	n.Add(MakeDomNode("canvas", args...))
 	return n
 }
 
@@ -689,7 +698,7 @@ func Map_(args ...interface{}) *DomNode {
 }
 
 func (n *DomNode) Map_(args ...interface{}) *DomNode {
-	n.appendChild(MakeDomNode("map_", args...))
+	n.Add(MakeDomNode("map_", args...))
 	return n
 }
 
@@ -698,7 +707,7 @@ func Area(args ...interface{}) *DomNode {
 }
 
 func (n *DomNode) Area(args ...interface{}) *DomNode {
-	n.appendChild(MakeDomNode("area", args...))
+	n.Add(MakeDomNode("area", args...))
 	return n
 }
 
@@ -707,7 +716,7 @@ func Table(args ...interface{}) *DomNode {
 }
 
 func (n *DomNode) Table(args ...interface{}) *DomNode {
-	n.appendChild(MakeDomNode("table", args...))
+	n.Add(MakeDomNode("table", args...))
 	return n
 }
 
@@ -716,7 +725,7 @@ func Caption(args ...interface{}) *DomNode {
 }
 
 func (n *DomNode) Caption(args ...interface{}) *DomNode {
-	n.appendChild(MakeDomNode("caption", args...))
+	n.Add(MakeDomNode("caption", args...))
 	return n
 }
 
@@ -725,7 +734,7 @@ func Colgroup(args ...interface{}) *DomNode {
 }
 
 func (n *DomNode) Colgroup(args ...interface{}) *DomNode {
-	n.appendChild(MakeDomNode("colgroup", args...))
+	n.Add(MakeDomNode("colgroup", args...))
 	return n
 }
 
@@ -734,7 +743,7 @@ func Col(args ...interface{}) *DomNode {
 }
 
 func (n *DomNode) Col(args ...interface{}) *DomNode {
-	n.appendChild(MakeDomNode("col", args...))
+	n.Add(MakeDomNode("col", args...))
 	return n
 }
 
@@ -743,7 +752,7 @@ func Tbody(args ...interface{}) *DomNode {
 }
 
 func (n *DomNode) Tbody(args ...interface{}) *DomNode {
-	n.appendChild(MakeDomNode("tbody", args...))
+	n.Add(MakeDomNode("tbody", args...))
 	return n
 }
 
@@ -752,7 +761,7 @@ func Thead(args ...interface{}) *DomNode {
 }
 
 func (n *DomNode) Thead(args ...interface{}) *DomNode {
-	n.appendChild(MakeDomNode("thead", args...))
+	n.Add(MakeDomNode("thead", args...))
 	return n
 }
 
@@ -761,7 +770,7 @@ func Tfoot(args ...interface{}) *DomNode {
 }
 
 func (n *DomNode) Tfoot(args ...interface{}) *DomNode {
-	n.appendChild(MakeDomNode("tfoot", args...))
+	n.Add(MakeDomNode("tfoot", args...))
 	return n
 }
 
@@ -770,7 +779,7 @@ func Tr(args ...interface{}) *DomNode {
 }
 
 func (n *DomNode) Tr(args ...interface{}) *DomNode {
-	n.appendChild(MakeDomNode("tr", args...))
+	n.Add(MakeDomNode("tr", args...))
 	return n
 }
 
@@ -779,7 +788,7 @@ func Td(args ...interface{}) *DomNode {
 }
 
 func (n *DomNode) Td(args ...interface{}) *DomNode {
-	n.appendChild(MakeDomNode("td", args...))
+	n.Add(MakeDomNode("td", args...))
 	return n
 }
 
@@ -788,7 +797,7 @@ func Th(args ...interface{}) *DomNode {
 }
 
 func (n *DomNode) Th(args ...interface{}) *DomNode {
-	n.appendChild(MakeDomNode("th", args...))
+	n.Add(MakeDomNode("th", args...))
 	return n
 }
 
@@ -797,7 +806,7 @@ func Form(args ...interface{}) *DomNode {
 }
 
 func (n *DomNode) Form(args ...interface{}) *DomNode {
-	n.appendChild(MakeDomNode("form", args...))
+	n.Add(MakeDomNode("form", args...))
 	return n
 }
 
@@ -806,7 +815,7 @@ func Fieldset(args ...interface{}) *DomNode {
 }
 
 func (n *DomNode) Fieldset(args ...interface{}) *DomNode {
-	n.appendChild(MakeDomNode("fieldset", args...))
+	n.Add(MakeDomNode("fieldset", args...))
 	return n
 }
 
@@ -815,7 +824,7 @@ func Legend(args ...interface{}) *DomNode {
 }
 
 func (n *DomNode) Legend(args ...interface{}) *DomNode {
-	n.appendChild(MakeDomNode("legend", args...))
+	n.Add(MakeDomNode("legend", args...))
 	return n
 }
 
@@ -824,7 +833,7 @@ func Label(args ...interface{}) *DomNode {
 }
 
 func (n *DomNode) Label(args ...interface{}) *DomNode {
-	n.appendChild(MakeDomNode("label", args...))
+	n.Add(MakeDomNode("label", args...))
 	return n
 }
 
@@ -833,7 +842,7 @@ func Input_(args ...interface{}) *DomNode {
 }
 
 func (n *DomNode) Input_(args ...interface{}) *DomNode {
-	n.appendChild(MakeDomNode("input_", args...))
+	n.Add(MakeDomNode("input_", args...))
 	return n
 }
 
@@ -842,7 +851,7 @@ func Button(args ...interface{}) *DomNode {
 }
 
 func (n *DomNode) Button(args ...interface{}) *DomNode {
-	n.appendChild(MakeDomNode("button", args...))
+	n.Add(MakeDomNode("button", args...))
 	return n
 }
 
@@ -851,7 +860,7 @@ func Select(args ...interface{}) *DomNode {
 }
 
 func (n *DomNode) Select(args ...interface{}) *DomNode {
-	n.appendChild(MakeDomNode("select", args...))
+	n.Add(MakeDomNode("select", args...))
 	return n
 }
 
@@ -860,7 +869,7 @@ func Datalist(args ...interface{}) *DomNode {
 }
 
 func (n *DomNode) Datalist(args ...interface{}) *DomNode {
-	n.appendChild(MakeDomNode("datalist", args...))
+	n.Add(MakeDomNode("datalist", args...))
 	return n
 }
 
@@ -869,7 +878,7 @@ func Optgroup(args ...interface{}) *DomNode {
 }
 
 func (n *DomNode) Optgroup(args ...interface{}) *DomNode {
-	n.appendChild(MakeDomNode("optgroup", args...))
+	n.Add(MakeDomNode("optgroup", args...))
 	return n
 }
 
@@ -878,7 +887,7 @@ func Option(args ...interface{}) *DomNode {
 }
 
 func (n *DomNode) Option(args ...interface{}) *DomNode {
-	n.appendChild(MakeDomNode("option", args...))
+	n.Add(MakeDomNode("option", args...))
 	return n
 }
 
@@ -887,7 +896,7 @@ func Textarea(args ...interface{}) *DomNode {
 }
 
 func (n *DomNode) Textarea(args ...interface{}) *DomNode {
-	n.appendChild(MakeDomNode("textarea", args...))
+	n.Add(MakeDomNode("textarea", args...))
 	return n
 }
 
@@ -896,7 +905,7 @@ func Keygen(args ...interface{}) *DomNode {
 }
 
 func (n *DomNode) Keygen(args ...interface{}) *DomNode {
-	n.appendChild(MakeDomNode("keygen", args...))
+	n.Add(MakeDomNode("keygen", args...))
 	return n
 }
 
@@ -905,7 +914,7 @@ func Output(args ...interface{}) *DomNode {
 }
 
 func (n *DomNode) Output(args ...interface{}) *DomNode {
-	n.appendChild(MakeDomNode("output", args...))
+	n.Add(MakeDomNode("output", args...))
 	return n
 }
 
@@ -914,7 +923,7 @@ func Progress(args ...interface{}) *DomNode {
 }
 
 func (n *DomNode) Progress(args ...interface{}) *DomNode {
-	n.appendChild(MakeDomNode("progress", args...))
+	n.Add(MakeDomNode("progress", args...))
 	return n
 }
 
@@ -923,7 +932,7 @@ func Meter(args ...interface{}) *DomNode {
 }
 
 func (n *DomNode) Meter(args ...interface{}) *DomNode {
-	n.appendChild(MakeDomNode("meter", args...))
+	n.Add(MakeDomNode("meter", args...))
 	return n
 }
 
@@ -932,7 +941,7 @@ func Details(args ...interface{}) *DomNode {
 }
 
 func (n *DomNode) Details(args ...interface{}) *DomNode {
-	n.appendChild(MakeDomNode("details", args...))
+	n.Add(MakeDomNode("details", args...))
 	return n
 }
 
@@ -941,7 +950,7 @@ func Summary(args ...interface{}) *DomNode {
 }
 
 func (n *DomNode) Summary(args ...interface{}) *DomNode {
-	n.appendChild(MakeDomNode("summary", args...))
+	n.Add(MakeDomNode("summary", args...))
 	return n
 }
 
@@ -950,7 +959,7 @@ func Command(args ...interface{}) *DomNode {
 }
 
 func (n *DomNode) Command(args ...interface{}) *DomNode {
-	n.appendChild(MakeDomNode("command", args...))
+	n.Add(MakeDomNode("command", args...))
 	return n
 }
 
@@ -959,6 +968,6 @@ func Menu(args ...interface{}) *DomNode {
 }
 
 func (n *DomNode) Menu(args ...interface{}) *DomNode {
-	n.appendChild(MakeDomNode("menu", args...))
+	n.Add(MakeDomNode("menu", args...))
 	return n
 }

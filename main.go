@@ -36,11 +36,11 @@ func MakeDomNode(name string, args ...interface{}) *DomNode {
 	for _, arg := range args {
 		switch a := arg.(type) {
 		case *DomNode:
-			n.appendChild(a)
+			n.Add(a)
 		case *TextNode:
-			n.appendChild(a)
+			n.Add(a)
 		case string:
-			n.appendChild(MakeTextNode(a))
+			n.Add(MakeTextNode(a))
 		case Attr:
 			for k, v := range a {
 				n.Attrs[k] = v
@@ -58,7 +58,7 @@ func MakeTextNode(value string) *TextNode {
 }
 
 // add a new node to the list of children and return the added node
-func (n *DomNode) appendChild(child Node) Node {
+func (n *DomNode) Add(child Node) Node {
 	n.Children = append(n.Children, child)
 	return child
 }
@@ -113,6 +113,6 @@ func (n *DomNode) StringBuild(b *bytes.Buffer) {
 }
 
 func (n *DomNode) Text(text string) *DomNode {
-	n.appendChild(MakeTextNode(text))
+	n.Add(MakeTextNode(text))
 	return n
 }
