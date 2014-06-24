@@ -119,12 +119,12 @@ if __name__ == '__main__':
 
     print(
       '''func %s(args ...interface{}) *DomNode {
-  return MakeDomNode("%s", args...)
+  return NewDomNode("%s", args...)
 }\n\n''' % (fname, tag))
 
     print(
       '''func (n *DomNode) %s(args ...interface{}) *DomNode {
-   n.Add(MakeDomNode("%s", args...))
+   n.Add(NewDomNode("%s", args...))
    return n
 }
 \n\n''' % (fname, tag))

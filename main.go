@@ -27,7 +27,7 @@ type TextNode struct {
 }
 
 // Node constructs a node with a name.
-func MakeDomNode(name string, args ...interface{}) *DomNode {
+func NewDomNode(name string, args ...interface{}) *DomNode {
 	n := &DomNode{
 		NodeName: name,
 		Attrs:    make(Attr, 0),
@@ -40,7 +40,7 @@ func MakeDomNode(name string, args ...interface{}) *DomNode {
 		case *TextNode:
 			n.Add(a)
 		case string:
-			n.Add(MakeTextNode(a))
+			n.Add(NewTextNode(a))
 		case *Context:
 			a.Add(n)
 		case Attr:
@@ -55,7 +55,7 @@ func MakeDomNode(name string, args ...interface{}) *DomNode {
 }
 
 // NodeArgs constructs a text node.
-func MakeTextNode(value string) *TextNode {
+func NewTextNode(value string) *TextNode {
 	return &TextNode{Value: value}
 }
 
@@ -115,6 +115,6 @@ func (n *DomNode) StringBuild(b *bytes.Buffer) {
 }
 
 func (n *DomNode) Text(text string) *DomNode {
-	n.Add(MakeTextNode(text))
+	n.Add(NewTextNode(text))
 	return n
 }

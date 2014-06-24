@@ -2,27 +2,27 @@ package domino
 
 type Context struct {
 	*DomNode
-	Stack []*DomNode
+	stack []*DomNode
 }
 
-func MakeContext(n *DomNode) *Context {
+func NewContext(n *DomNode) *Context {
 	c := &Context{
 		DomNode: n,
-		Stack:   make([]*DomNode, 0),
+		stack:   make([]*DomNode, 0),
 	}
 	c.Push(n)
 	return c
 }
 
 func (c *Context) Push(n *DomNode) {
-	c.Stack = append(c.Stack, n)
+	c.stack = append(c.stack, n)
 	c.DomNode = n
 }
 
 func (c *Context) Pop() {
-	if len(c.Stack) == 0 {
+	if len(c.stack) == 0 {
 		panic("Nothing to pop")
 	}
-	c.Stack = c.Stack[0 : len(c.Stack)-1]
-	c.DomNode = c.Stack[len(c.Stack)-1]
+	c.stack = c.stack[0 : len(c.stack)-1]
+	c.DomNode = c.stack[len(c.stack)-1]
 }

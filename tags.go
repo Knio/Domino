@@ -1,973 +1,973 @@
 package domino
 
 func Html(args ...interface{}) *DomNode {
-	return MakeDomNode("html", args...)
+	return NewDomNode("html", args...)
 }
 
 func (n *DomNode) Html(args ...interface{}) *DomNode {
-	n.Add(MakeDomNode("html", args...))
+	n.Add(NewDomNode("html", args...))
 	return n
 }
 
 func Head(args ...interface{}) *DomNode {
-	return MakeDomNode("head", args...)
+	return NewDomNode("head", args...)
 }
 
 func (n *DomNode) Head(args ...interface{}) *DomNode {
-	n.Add(MakeDomNode("head", args...))
+	n.Add(NewDomNode("head", args...))
 	return n
 }
 
 func Title(args ...interface{}) *DomNode {
-	return MakeDomNode("title", args...)
+	return NewDomNode("title", args...)
 }
 
 func (n *DomNode) Title(args ...interface{}) *DomNode {
-	n.Add(MakeDomNode("title", args...))
+	n.Add(NewDomNode("title", args...))
 	return n
 }
 
 func Base(args ...interface{}) *DomNode {
-	return MakeDomNode("base", args...)
+	return NewDomNode("base", args...)
 }
 
 func (n *DomNode) Base(args ...interface{}) *DomNode {
-	n.Add(MakeDomNode("base", args...))
+	n.Add(NewDomNode("base", args...))
 	return n
 }
 
 func Link(args ...interface{}) *DomNode {
-	return MakeDomNode("link", args...)
+	return NewDomNode("link", args...)
 }
 
 func (n *DomNode) Link(args ...interface{}) *DomNode {
-	n.Add(MakeDomNode("link", args...))
+	n.Add(NewDomNode("link", args...))
 	return n
 }
 
 func Meta(args ...interface{}) *DomNode {
-	return MakeDomNode("meta", args...)
+	return NewDomNode("meta", args...)
 }
 
 func (n *DomNode) Meta(args ...interface{}) *DomNode {
-	n.Add(MakeDomNode("meta", args...))
+	n.Add(NewDomNode("meta", args...))
 	return n
 }
 
 func Style(args ...interface{}) *DomNode {
-	return MakeDomNode("style", args...)
+	return NewDomNode("style", args...)
 }
 
 func (n *DomNode) Style(args ...interface{}) *DomNode {
-	n.Add(MakeDomNode("style", args...))
+	n.Add(NewDomNode("style", args...))
 	return n
 }
 
 func Script(args ...interface{}) *DomNode {
-	return MakeDomNode("script", args...)
+	return NewDomNode("script", args...)
 }
 
 func (n *DomNode) Script(args ...interface{}) *DomNode {
-	n.Add(MakeDomNode("script", args...))
+	n.Add(NewDomNode("script", args...))
 	return n
 }
 
 func Noscript(args ...interface{}) *DomNode {
-	return MakeDomNode("noscript", args...)
+	return NewDomNode("noscript", args...)
 }
 
 func (n *DomNode) Noscript(args ...interface{}) *DomNode {
-	n.Add(MakeDomNode("noscript", args...))
+	n.Add(NewDomNode("noscript", args...))
 	return n
 }
 
 func Body(args ...interface{}) *DomNode {
-	return MakeDomNode("body", args...)
+	return NewDomNode("body", args...)
 }
 
 func (n *DomNode) Body(args ...interface{}) *DomNode {
-	n.Add(MakeDomNode("body", args...))
+	n.Add(NewDomNode("body", args...))
 	return n
 }
 
 func Section(args ...interface{}) *DomNode {
-	return MakeDomNode("section", args...)
+	return NewDomNode("section", args...)
 }
 
 func (n *DomNode) Section(args ...interface{}) *DomNode {
-	n.Add(MakeDomNode("section", args...))
+	n.Add(NewDomNode("section", args...))
 	return n
 }
 
 func Nav(args ...interface{}) *DomNode {
-	return MakeDomNode("nav", args...)
+	return NewDomNode("nav", args...)
 }
 
 func (n *DomNode) Nav(args ...interface{}) *DomNode {
-	n.Add(MakeDomNode("nav", args...))
+	n.Add(NewDomNode("nav", args...))
 	return n
 }
 
 func Article(args ...interface{}) *DomNode {
-	return MakeDomNode("article", args...)
+	return NewDomNode("article", args...)
 }
 
 func (n *DomNode) Article(args ...interface{}) *DomNode {
-	n.Add(MakeDomNode("article", args...))
+	n.Add(NewDomNode("article", args...))
 	return n
 }
 
 func Aside(args ...interface{}) *DomNode {
-	return MakeDomNode("aside", args...)
+	return NewDomNode("aside", args...)
 }
 
 func (n *DomNode) Aside(args ...interface{}) *DomNode {
-	n.Add(MakeDomNode("aside", args...))
+	n.Add(NewDomNode("aside", args...))
 	return n
 }
 
 func H1(args ...interface{}) *DomNode {
-	return MakeDomNode("h1", args...)
+	return NewDomNode("h1", args...)
 }
 
 func (n *DomNode) H1(args ...interface{}) *DomNode {
-	n.Add(MakeDomNode("h1", args...))
+	n.Add(NewDomNode("h1", args...))
 	return n
 }
 
 func H2(args ...interface{}) *DomNode {
-	return MakeDomNode("h2", args...)
+	return NewDomNode("h2", args...)
 }
 
 func (n *DomNode) H2(args ...interface{}) *DomNode {
-	n.Add(MakeDomNode("h2", args...))
+	n.Add(NewDomNode("h2", args...))
 	return n
 }
 
 func H3(args ...interface{}) *DomNode {
-	return MakeDomNode("h3", args...)
+	return NewDomNode("h3", args...)
 }
 
 func (n *DomNode) H3(args ...interface{}) *DomNode {
-	n.Add(MakeDomNode("h3", args...))
+	n.Add(NewDomNode("h3", args...))
 	return n
 }
 
 func H4(args ...interface{}) *DomNode {
-	return MakeDomNode("h4", args...)
+	return NewDomNode("h4", args...)
 }
 
 func (n *DomNode) H4(args ...interface{}) *DomNode {
-	n.Add(MakeDomNode("h4", args...))
+	n.Add(NewDomNode("h4", args...))
 	return n
 }
 
 func H5(args ...interface{}) *DomNode {
-	return MakeDomNode("h5", args...)
+	return NewDomNode("h5", args...)
 }
 
 func (n *DomNode) H5(args ...interface{}) *DomNode {
-	n.Add(MakeDomNode("h5", args...))
+	n.Add(NewDomNode("h5", args...))
 	return n
 }
 
 func H6(args ...interface{}) *DomNode {
-	return MakeDomNode("h6", args...)
+	return NewDomNode("h6", args...)
 }
 
 func (n *DomNode) H6(args ...interface{}) *DomNode {
-	n.Add(MakeDomNode("h6", args...))
+	n.Add(NewDomNode("h6", args...))
 	return n
 }
 
 func Hgroup(args ...interface{}) *DomNode {
-	return MakeDomNode("hgroup", args...)
+	return NewDomNode("hgroup", args...)
 }
 
 func (n *DomNode) Hgroup(args ...interface{}) *DomNode {
-	n.Add(MakeDomNode("hgroup", args...))
+	n.Add(NewDomNode("hgroup", args...))
 	return n
 }
 
 func Header(args ...interface{}) *DomNode {
-	return MakeDomNode("header", args...)
+	return NewDomNode("header", args...)
 }
 
 func (n *DomNode) Header(args ...interface{}) *DomNode {
-	n.Add(MakeDomNode("header", args...))
+	n.Add(NewDomNode("header", args...))
 	return n
 }
 
 func Footer(args ...interface{}) *DomNode {
-	return MakeDomNode("footer", args...)
+	return NewDomNode("footer", args...)
 }
 
 func (n *DomNode) Footer(args ...interface{}) *DomNode {
-	n.Add(MakeDomNode("footer", args...))
+	n.Add(NewDomNode("footer", args...))
 	return n
 }
 
 func Address(args ...interface{}) *DomNode {
-	return MakeDomNode("address", args...)
+	return NewDomNode("address", args...)
 }
 
 func (n *DomNode) Address(args ...interface{}) *DomNode {
-	n.Add(MakeDomNode("address", args...))
+	n.Add(NewDomNode("address", args...))
 	return n
 }
 
 func P(args ...interface{}) *DomNode {
-	return MakeDomNode("p", args...)
+	return NewDomNode("p", args...)
 }
 
 func (n *DomNode) P(args ...interface{}) *DomNode {
-	n.Add(MakeDomNode("p", args...))
+	n.Add(NewDomNode("p", args...))
 	return n
 }
 
 func Hr(args ...interface{}) *DomNode {
-	return MakeDomNode("hr", args...)
+	return NewDomNode("hr", args...)
 }
 
 func (n *DomNode) Hr(args ...interface{}) *DomNode {
-	n.Add(MakeDomNode("hr", args...))
+	n.Add(NewDomNode("hr", args...))
 	return n
 }
 
 func Pre(args ...interface{}) *DomNode {
-	return MakeDomNode("pre", args...)
+	return NewDomNode("pre", args...)
 }
 
 func (n *DomNode) Pre(args ...interface{}) *DomNode {
-	n.Add(MakeDomNode("pre", args...))
+	n.Add(NewDomNode("pre", args...))
 	return n
 }
 
 func Blockquote(args ...interface{}) *DomNode {
-	return MakeDomNode("blockquote", args...)
+	return NewDomNode("blockquote", args...)
 }
 
 func (n *DomNode) Blockquote(args ...interface{}) *DomNode {
-	n.Add(MakeDomNode("blockquote", args...))
+	n.Add(NewDomNode("blockquote", args...))
 	return n
 }
 
 func Ol(args ...interface{}) *DomNode {
-	return MakeDomNode("ol", args...)
+	return NewDomNode("ol", args...)
 }
 
 func (n *DomNode) Ol(args ...interface{}) *DomNode {
-	n.Add(MakeDomNode("ol", args...))
+	n.Add(NewDomNode("ol", args...))
 	return n
 }
 
 func Ul(args ...interface{}) *DomNode {
-	return MakeDomNode("ul", args...)
+	return NewDomNode("ul", args...)
 }
 
 func (n *DomNode) Ul(args ...interface{}) *DomNode {
-	n.Add(MakeDomNode("ul", args...))
+	n.Add(NewDomNode("ul", args...))
 	return n
 }
 
 func Li(args ...interface{}) *DomNode {
-	return MakeDomNode("li", args...)
+	return NewDomNode("li", args...)
 }
 
 func (n *DomNode) Li(args ...interface{}) *DomNode {
-	n.Add(MakeDomNode("li", args...))
+	n.Add(NewDomNode("li", args...))
 	return n
 }
 
 func Dl(args ...interface{}) *DomNode {
-	return MakeDomNode("dl", args...)
+	return NewDomNode("dl", args...)
 }
 
 func (n *DomNode) Dl(args ...interface{}) *DomNode {
-	n.Add(MakeDomNode("dl", args...))
+	n.Add(NewDomNode("dl", args...))
 	return n
 }
 
 func Dt(args ...interface{}) *DomNode {
-	return MakeDomNode("dt", args...)
+	return NewDomNode("dt", args...)
 }
 
 func (n *DomNode) Dt(args ...interface{}) *DomNode {
-	n.Add(MakeDomNode("dt", args...))
+	n.Add(NewDomNode("dt", args...))
 	return n
 }
 
 func Dd(args ...interface{}) *DomNode {
-	return MakeDomNode("dd", args...)
+	return NewDomNode("dd", args...)
 }
 
 func (n *DomNode) Dd(args ...interface{}) *DomNode {
-	n.Add(MakeDomNode("dd", args...))
+	n.Add(NewDomNode("dd", args...))
 	return n
 }
 
 func Figure(args ...interface{}) *DomNode {
-	return MakeDomNode("figure", args...)
+	return NewDomNode("figure", args...)
 }
 
 func (n *DomNode) Figure(args ...interface{}) *DomNode {
-	n.Add(MakeDomNode("figure", args...))
+	n.Add(NewDomNode("figure", args...))
 	return n
 }
 
 func Figcaption(args ...interface{}) *DomNode {
-	return MakeDomNode("figcaption", args...)
+	return NewDomNode("figcaption", args...)
 }
 
 func (n *DomNode) Figcaption(args ...interface{}) *DomNode {
-	n.Add(MakeDomNode("figcaption", args...))
+	n.Add(NewDomNode("figcaption", args...))
 	return n
 }
 
 func Div(args ...interface{}) *DomNode {
-	return MakeDomNode("div", args...)
+	return NewDomNode("div", args...)
 }
 
 func (n *DomNode) Div(args ...interface{}) *DomNode {
-	n.Add(MakeDomNode("div", args...))
+	n.Add(NewDomNode("div", args...))
 	return n
 }
 
 func A(args ...interface{}) *DomNode {
-	return MakeDomNode("a", args...)
+	return NewDomNode("a", args...)
 }
 
 func (n *DomNode) A(args ...interface{}) *DomNode {
-	n.Add(MakeDomNode("a", args...))
+	n.Add(NewDomNode("a", args...))
 	return n
 }
 
 func Em(args ...interface{}) *DomNode {
-	return MakeDomNode("em", args...)
+	return NewDomNode("em", args...)
 }
 
 func (n *DomNode) Em(args ...interface{}) *DomNode {
-	n.Add(MakeDomNode("em", args...))
+	n.Add(NewDomNode("em", args...))
 	return n
 }
 
 func Strong(args ...interface{}) *DomNode {
-	return MakeDomNode("strong", args...)
+	return NewDomNode("strong", args...)
 }
 
 func (n *DomNode) Strong(args ...interface{}) *DomNode {
-	n.Add(MakeDomNode("strong", args...))
+	n.Add(NewDomNode("strong", args...))
 	return n
 }
 
 func Small(args ...interface{}) *DomNode {
-	return MakeDomNode("small", args...)
+	return NewDomNode("small", args...)
 }
 
 func (n *DomNode) Small(args ...interface{}) *DomNode {
-	n.Add(MakeDomNode("small", args...))
+	n.Add(NewDomNode("small", args...))
 	return n
 }
 
 func S(args ...interface{}) *DomNode {
-	return MakeDomNode("s", args...)
+	return NewDomNode("s", args...)
 }
 
 func (n *DomNode) S(args ...interface{}) *DomNode {
-	n.Add(MakeDomNode("s", args...))
+	n.Add(NewDomNode("s", args...))
 	return n
 }
 
 func Cite(args ...interface{}) *DomNode {
-	return MakeDomNode("cite", args...)
+	return NewDomNode("cite", args...)
 }
 
 func (n *DomNode) Cite(args ...interface{}) *DomNode {
-	n.Add(MakeDomNode("cite", args...))
+	n.Add(NewDomNode("cite", args...))
 	return n
 }
 
 func Q(args ...interface{}) *DomNode {
-	return MakeDomNode("q", args...)
+	return NewDomNode("q", args...)
 }
 
 func (n *DomNode) Q(args ...interface{}) *DomNode {
-	n.Add(MakeDomNode("q", args...))
+	n.Add(NewDomNode("q", args...))
 	return n
 }
 
 func Dfn(args ...interface{}) *DomNode {
-	return MakeDomNode("dfn", args...)
+	return NewDomNode("dfn", args...)
 }
 
 func (n *DomNode) Dfn(args ...interface{}) *DomNode {
-	n.Add(MakeDomNode("dfn", args...))
+	n.Add(NewDomNode("dfn", args...))
 	return n
 }
 
 func Abbr(args ...interface{}) *DomNode {
-	return MakeDomNode("abbr", args...)
+	return NewDomNode("abbr", args...)
 }
 
 func (n *DomNode) Abbr(args ...interface{}) *DomNode {
-	n.Add(MakeDomNode("abbr", args...))
+	n.Add(NewDomNode("abbr", args...))
 	return n
 }
 
 func Time(args ...interface{}) *DomNode {
-	return MakeDomNode("time", args...)
+	return NewDomNode("time", args...)
 }
 
 func (n *DomNode) Time(args ...interface{}) *DomNode {
-	n.Add(MakeDomNode("time", args...))
+	n.Add(NewDomNode("time", args...))
 	return n
 }
 
 func Code(args ...interface{}) *DomNode {
-	return MakeDomNode("code", args...)
+	return NewDomNode("code", args...)
 }
 
 func (n *DomNode) Code(args ...interface{}) *DomNode {
-	n.Add(MakeDomNode("code", args...))
+	n.Add(NewDomNode("code", args...))
 	return n
 }
 
 func Var(args ...interface{}) *DomNode {
-	return MakeDomNode("var", args...)
+	return NewDomNode("var", args...)
 }
 
 func (n *DomNode) Var(args ...interface{}) *DomNode {
-	n.Add(MakeDomNode("var", args...))
+	n.Add(NewDomNode("var", args...))
 	return n
 }
 
 func Samp(args ...interface{}) *DomNode {
-	return MakeDomNode("samp", args...)
+	return NewDomNode("samp", args...)
 }
 
 func (n *DomNode) Samp(args ...interface{}) *DomNode {
-	n.Add(MakeDomNode("samp", args...))
+	n.Add(NewDomNode("samp", args...))
 	return n
 }
 
 func Kbd(args ...interface{}) *DomNode {
-	return MakeDomNode("kbd", args...)
+	return NewDomNode("kbd", args...)
 }
 
 func (n *DomNode) Kbd(args ...interface{}) *DomNode {
-	n.Add(MakeDomNode("kbd", args...))
+	n.Add(NewDomNode("kbd", args...))
 	return n
 }
 
 func Sub(args ...interface{}) *DomNode {
-	return MakeDomNode("sub", args...)
+	return NewDomNode("sub", args...)
 }
 
 func (n *DomNode) Sub(args ...interface{}) *DomNode {
-	n.Add(MakeDomNode("sub", args...))
+	n.Add(NewDomNode("sub", args...))
 	return n
 }
 
 func Sup(args ...interface{}) *DomNode {
-	return MakeDomNode("sup", args...)
+	return NewDomNode("sup", args...)
 }
 
 func (n *DomNode) Sup(args ...interface{}) *DomNode {
-	n.Add(MakeDomNode("sup", args...))
+	n.Add(NewDomNode("sup", args...))
 	return n
 }
 
 func I(args ...interface{}) *DomNode {
-	return MakeDomNode("i", args...)
+	return NewDomNode("i", args...)
 }
 
 func (n *DomNode) I(args ...interface{}) *DomNode {
-	n.Add(MakeDomNode("i", args...))
+	n.Add(NewDomNode("i", args...))
 	return n
 }
 
 func B(args ...interface{}) *DomNode {
-	return MakeDomNode("b", args...)
+	return NewDomNode("b", args...)
 }
 
 func (n *DomNode) B(args ...interface{}) *DomNode {
-	n.Add(MakeDomNode("b", args...))
+	n.Add(NewDomNode("b", args...))
 	return n
 }
 
 func U(args ...interface{}) *DomNode {
-	return MakeDomNode("u", args...)
+	return NewDomNode("u", args...)
 }
 
 func (n *DomNode) U(args ...interface{}) *DomNode {
-	n.Add(MakeDomNode("u", args...))
+	n.Add(NewDomNode("u", args...))
 	return n
 }
 
 func Mark(args ...interface{}) *DomNode {
-	return MakeDomNode("mark", args...)
+	return NewDomNode("mark", args...)
 }
 
 func (n *DomNode) Mark(args ...interface{}) *DomNode {
-	n.Add(MakeDomNode("mark", args...))
+	n.Add(NewDomNode("mark", args...))
 	return n
 }
 
 func Ruby(args ...interface{}) *DomNode {
-	return MakeDomNode("ruby", args...)
+	return NewDomNode("ruby", args...)
 }
 
 func (n *DomNode) Ruby(args ...interface{}) *DomNode {
-	n.Add(MakeDomNode("ruby", args...))
+	n.Add(NewDomNode("ruby", args...))
 	return n
 }
 
 func Rt(args ...interface{}) *DomNode {
-	return MakeDomNode("rt", args...)
+	return NewDomNode("rt", args...)
 }
 
 func (n *DomNode) Rt(args ...interface{}) *DomNode {
-	n.Add(MakeDomNode("rt", args...))
+	n.Add(NewDomNode("rt", args...))
 	return n
 }
 
 func Rp(args ...interface{}) *DomNode {
-	return MakeDomNode("rp", args...)
+	return NewDomNode("rp", args...)
 }
 
 func (n *DomNode) Rp(args ...interface{}) *DomNode {
-	n.Add(MakeDomNode("rp", args...))
+	n.Add(NewDomNode("rp", args...))
 	return n
 }
 
 func Bdi(args ...interface{}) *DomNode {
-	return MakeDomNode("bdi", args...)
+	return NewDomNode("bdi", args...)
 }
 
 func (n *DomNode) Bdi(args ...interface{}) *DomNode {
-	n.Add(MakeDomNode("bdi", args...))
+	n.Add(NewDomNode("bdi", args...))
 	return n
 }
 
 func Bdo(args ...interface{}) *DomNode {
-	return MakeDomNode("bdo", args...)
+	return NewDomNode("bdo", args...)
 }
 
 func (n *DomNode) Bdo(args ...interface{}) *DomNode {
-	n.Add(MakeDomNode("bdo", args...))
+	n.Add(NewDomNode("bdo", args...))
 	return n
 }
 
 func Span(args ...interface{}) *DomNode {
-	return MakeDomNode("span", args...)
+	return NewDomNode("span", args...)
 }
 
 func (n *DomNode) Span(args ...interface{}) *DomNode {
-	n.Add(MakeDomNode("span", args...))
+	n.Add(NewDomNode("span", args...))
 	return n
 }
 
 func Br(args ...interface{}) *DomNode {
-	return MakeDomNode("br", args...)
+	return NewDomNode("br", args...)
 }
 
 func (n *DomNode) Br(args ...interface{}) *DomNode {
-	n.Add(MakeDomNode("br", args...))
+	n.Add(NewDomNode("br", args...))
 	return n
 }
 
 func Wbr(args ...interface{}) *DomNode {
-	return MakeDomNode("wbr", args...)
+	return NewDomNode("wbr", args...)
 }
 
 func (n *DomNode) Wbr(args ...interface{}) *DomNode {
-	n.Add(MakeDomNode("wbr", args...))
+	n.Add(NewDomNode("wbr", args...))
 	return n
 }
 
 func Ins(args ...interface{}) *DomNode {
-	return MakeDomNode("ins", args...)
+	return NewDomNode("ins", args...)
 }
 
 func (n *DomNode) Ins(args ...interface{}) *DomNode {
-	n.Add(MakeDomNode("ins", args...))
+	n.Add(NewDomNode("ins", args...))
 	return n
 }
 
 func Del(args ...interface{}) *DomNode {
-	return MakeDomNode("del", args...)
+	return NewDomNode("del", args...)
 }
 
 func (n *DomNode) Del(args ...interface{}) *DomNode {
-	n.Add(MakeDomNode("del", args...))
+	n.Add(NewDomNode("del", args...))
 	return n
 }
 
 func Img(args ...interface{}) *DomNode {
-	return MakeDomNode("img", args...)
+	return NewDomNode("img", args...)
 }
 
 func (n *DomNode) Img(args ...interface{}) *DomNode {
-	n.Add(MakeDomNode("img", args...))
+	n.Add(NewDomNode("img", args...))
 	return n
 }
 
 func Iframe(args ...interface{}) *DomNode {
-	return MakeDomNode("iframe", args...)
+	return NewDomNode("iframe", args...)
 }
 
 func (n *DomNode) Iframe(args ...interface{}) *DomNode {
-	n.Add(MakeDomNode("iframe", args...))
+	n.Add(NewDomNode("iframe", args...))
 	return n
 }
 
 func Embed(args ...interface{}) *DomNode {
-	return MakeDomNode("embed", args...)
+	return NewDomNode("embed", args...)
 }
 
 func (n *DomNode) Embed(args ...interface{}) *DomNode {
-	n.Add(MakeDomNode("embed", args...))
+	n.Add(NewDomNode("embed", args...))
 	return n
 }
 
 func Object(args ...interface{}) *DomNode {
-	return MakeDomNode("object", args...)
+	return NewDomNode("object", args...)
 }
 
 func (n *DomNode) Object(args ...interface{}) *DomNode {
-	n.Add(MakeDomNode("object", args...))
+	n.Add(NewDomNode("object", args...))
 	return n
 }
 
 func Param(args ...interface{}) *DomNode {
-	return MakeDomNode("param", args...)
+	return NewDomNode("param", args...)
 }
 
 func (n *DomNode) Param(args ...interface{}) *DomNode {
-	n.Add(MakeDomNode("param", args...))
+	n.Add(NewDomNode("param", args...))
 	return n
 }
 
 func Video(args ...interface{}) *DomNode {
-	return MakeDomNode("video", args...)
+	return NewDomNode("video", args...)
 }
 
 func (n *DomNode) Video(args ...interface{}) *DomNode {
-	n.Add(MakeDomNode("video", args...))
+	n.Add(NewDomNode("video", args...))
 	return n
 }
 
 func Audio(args ...interface{}) *DomNode {
-	return MakeDomNode("audio", args...)
+	return NewDomNode("audio", args...)
 }
 
 func (n *DomNode) Audio(args ...interface{}) *DomNode {
-	n.Add(MakeDomNode("audio", args...))
+	n.Add(NewDomNode("audio", args...))
 	return n
 }
 
 func Source(args ...interface{}) *DomNode {
-	return MakeDomNode("source", args...)
+	return NewDomNode("source", args...)
 }
 
 func (n *DomNode) Source(args ...interface{}) *DomNode {
-	n.Add(MakeDomNode("source", args...))
+	n.Add(NewDomNode("source", args...))
 	return n
 }
 
 func Track(args ...interface{}) *DomNode {
-	return MakeDomNode("track", args...)
+	return NewDomNode("track", args...)
 }
 
 func (n *DomNode) Track(args ...interface{}) *DomNode {
-	n.Add(MakeDomNode("track", args...))
+	n.Add(NewDomNode("track", args...))
 	return n
 }
 
 func Canvas(args ...interface{}) *DomNode {
-	return MakeDomNode("canvas", args...)
+	return NewDomNode("canvas", args...)
 }
 
 func (n *DomNode) Canvas(args ...interface{}) *DomNode {
-	n.Add(MakeDomNode("canvas", args...))
+	n.Add(NewDomNode("canvas", args...))
 	return n
 }
 
 func Map_(args ...interface{}) *DomNode {
-	return MakeDomNode("map_", args...)
+	return NewDomNode("map_", args...)
 }
 
 func (n *DomNode) Map_(args ...interface{}) *DomNode {
-	n.Add(MakeDomNode("map_", args...))
+	n.Add(NewDomNode("map_", args...))
 	return n
 }
 
 func Area(args ...interface{}) *DomNode {
-	return MakeDomNode("area", args...)
+	return NewDomNode("area", args...)
 }
 
 func (n *DomNode) Area(args ...interface{}) *DomNode {
-	n.Add(MakeDomNode("area", args...))
+	n.Add(NewDomNode("area", args...))
 	return n
 }
 
 func Table(args ...interface{}) *DomNode {
-	return MakeDomNode("table", args...)
+	return NewDomNode("table", args...)
 }
 
 func (n *DomNode) Table(args ...interface{}) *DomNode {
-	n.Add(MakeDomNode("table", args...))
+	n.Add(NewDomNode("table", args...))
 	return n
 }
 
 func Caption(args ...interface{}) *DomNode {
-	return MakeDomNode("caption", args...)
+	return NewDomNode("caption", args...)
 }
 
 func (n *DomNode) Caption(args ...interface{}) *DomNode {
-	n.Add(MakeDomNode("caption", args...))
+	n.Add(NewDomNode("caption", args...))
 	return n
 }
 
 func Colgroup(args ...interface{}) *DomNode {
-	return MakeDomNode("colgroup", args...)
+	return NewDomNode("colgroup", args...)
 }
 
 func (n *DomNode) Colgroup(args ...interface{}) *DomNode {
-	n.Add(MakeDomNode("colgroup", args...))
+	n.Add(NewDomNode("colgroup", args...))
 	return n
 }
 
 func Col(args ...interface{}) *DomNode {
-	return MakeDomNode("col", args...)
+	return NewDomNode("col", args...)
 }
 
 func (n *DomNode) Col(args ...interface{}) *DomNode {
-	n.Add(MakeDomNode("col", args...))
+	n.Add(NewDomNode("col", args...))
 	return n
 }
 
 func Tbody(args ...interface{}) *DomNode {
-	return MakeDomNode("tbody", args...)
+	return NewDomNode("tbody", args...)
 }
 
 func (n *DomNode) Tbody(args ...interface{}) *DomNode {
-	n.Add(MakeDomNode("tbody", args...))
+	n.Add(NewDomNode("tbody", args...))
 	return n
 }
 
 func Thead(args ...interface{}) *DomNode {
-	return MakeDomNode("thead", args...)
+	return NewDomNode("thead", args...)
 }
 
 func (n *DomNode) Thead(args ...interface{}) *DomNode {
-	n.Add(MakeDomNode("thead", args...))
+	n.Add(NewDomNode("thead", args...))
 	return n
 }
 
 func Tfoot(args ...interface{}) *DomNode {
-	return MakeDomNode("tfoot", args...)
+	return NewDomNode("tfoot", args...)
 }
 
 func (n *DomNode) Tfoot(args ...interface{}) *DomNode {
-	n.Add(MakeDomNode("tfoot", args...))
+	n.Add(NewDomNode("tfoot", args...))
 	return n
 }
 
 func Tr(args ...interface{}) *DomNode {
-	return MakeDomNode("tr", args...)
+	return NewDomNode("tr", args...)
 }
 
 func (n *DomNode) Tr(args ...interface{}) *DomNode {
-	n.Add(MakeDomNode("tr", args...))
+	n.Add(NewDomNode("tr", args...))
 	return n
 }
 
 func Td(args ...interface{}) *DomNode {
-	return MakeDomNode("td", args...)
+	return NewDomNode("td", args...)
 }
 
 func (n *DomNode) Td(args ...interface{}) *DomNode {
-	n.Add(MakeDomNode("td", args...))
+	n.Add(NewDomNode("td", args...))
 	return n
 }
 
 func Th(args ...interface{}) *DomNode {
-	return MakeDomNode("th", args...)
+	return NewDomNode("th", args...)
 }
 
 func (n *DomNode) Th(args ...interface{}) *DomNode {
-	n.Add(MakeDomNode("th", args...))
+	n.Add(NewDomNode("th", args...))
 	return n
 }
 
 func Form(args ...interface{}) *DomNode {
-	return MakeDomNode("form", args...)
+	return NewDomNode("form", args...)
 }
 
 func (n *DomNode) Form(args ...interface{}) *DomNode {
-	n.Add(MakeDomNode("form", args...))
+	n.Add(NewDomNode("form", args...))
 	return n
 }
 
 func Fieldset(args ...interface{}) *DomNode {
-	return MakeDomNode("fieldset", args...)
+	return NewDomNode("fieldset", args...)
 }
 
 func (n *DomNode) Fieldset(args ...interface{}) *DomNode {
-	n.Add(MakeDomNode("fieldset", args...))
+	n.Add(NewDomNode("fieldset", args...))
 	return n
 }
 
 func Legend(args ...interface{}) *DomNode {
-	return MakeDomNode("legend", args...)
+	return NewDomNode("legend", args...)
 }
 
 func (n *DomNode) Legend(args ...interface{}) *DomNode {
-	n.Add(MakeDomNode("legend", args...))
+	n.Add(NewDomNode("legend", args...))
 	return n
 }
 
 func Label(args ...interface{}) *DomNode {
-	return MakeDomNode("label", args...)
+	return NewDomNode("label", args...)
 }
 
 func (n *DomNode) Label(args ...interface{}) *DomNode {
-	n.Add(MakeDomNode("label", args...))
+	n.Add(NewDomNode("label", args...))
 	return n
 }
 
 func Input_(args ...interface{}) *DomNode {
-	return MakeDomNode("input_", args...)
+	return NewDomNode("input_", args...)
 }
 
 func (n *DomNode) Input_(args ...interface{}) *DomNode {
-	n.Add(MakeDomNode("input_", args...))
+	n.Add(NewDomNode("input_", args...))
 	return n
 }
 
 func Button(args ...interface{}) *DomNode {
-	return MakeDomNode("button", args...)
+	return NewDomNode("button", args...)
 }
 
 func (n *DomNode) Button(args ...interface{}) *DomNode {
-	n.Add(MakeDomNode("button", args...))
+	n.Add(NewDomNode("button", args...))
 	return n
 }
 
 func Select(args ...interface{}) *DomNode {
-	return MakeDomNode("select", args...)
+	return NewDomNode("select", args...)
 }
 
 func (n *DomNode) Select(args ...interface{}) *DomNode {
-	n.Add(MakeDomNode("select", args...))
+	n.Add(NewDomNode("select", args...))
 	return n
 }
 
 func Datalist(args ...interface{}) *DomNode {
-	return MakeDomNode("datalist", args...)
+	return NewDomNode("datalist", args...)
 }
 
 func (n *DomNode) Datalist(args ...interface{}) *DomNode {
-	n.Add(MakeDomNode("datalist", args...))
+	n.Add(NewDomNode("datalist", args...))
 	return n
 }
 
 func Optgroup(args ...interface{}) *DomNode {
-	return MakeDomNode("optgroup", args...)
+	return NewDomNode("optgroup", args...)
 }
 
 func (n *DomNode) Optgroup(args ...interface{}) *DomNode {
-	n.Add(MakeDomNode("optgroup", args...))
+	n.Add(NewDomNode("optgroup", args...))
 	return n
 }
 
 func Option(args ...interface{}) *DomNode {
-	return MakeDomNode("option", args...)
+	return NewDomNode("option", args...)
 }
 
 func (n *DomNode) Option(args ...interface{}) *DomNode {
-	n.Add(MakeDomNode("option", args...))
+	n.Add(NewDomNode("option", args...))
 	return n
 }
 
 func Textarea(args ...interface{}) *DomNode {
-	return MakeDomNode("textarea", args...)
+	return NewDomNode("textarea", args...)
 }
 
 func (n *DomNode) Textarea(args ...interface{}) *DomNode {
-	n.Add(MakeDomNode("textarea", args...))
+	n.Add(NewDomNode("textarea", args...))
 	return n
 }
 
 func Keygen(args ...interface{}) *DomNode {
-	return MakeDomNode("keygen", args...)
+	return NewDomNode("keygen", args...)
 }
 
 func (n *DomNode) Keygen(args ...interface{}) *DomNode {
-	n.Add(MakeDomNode("keygen", args...))
+	n.Add(NewDomNode("keygen", args...))
 	return n
 }
 
 func Output(args ...interface{}) *DomNode {
-	return MakeDomNode("output", args...)
+	return NewDomNode("output", args...)
 }
 
 func (n *DomNode) Output(args ...interface{}) *DomNode {
-	n.Add(MakeDomNode("output", args...))
+	n.Add(NewDomNode("output", args...))
 	return n
 }
 
 func Progress(args ...interface{}) *DomNode {
-	return MakeDomNode("progress", args...)
+	return NewDomNode("progress", args...)
 }
 
 func (n *DomNode) Progress(args ...interface{}) *DomNode {
-	n.Add(MakeDomNode("progress", args...))
+	n.Add(NewDomNode("progress", args...))
 	return n
 }
 
 func Meter(args ...interface{}) *DomNode {
-	return MakeDomNode("meter", args...)
+	return NewDomNode("meter", args...)
 }
 
 func (n *DomNode) Meter(args ...interface{}) *DomNode {
-	n.Add(MakeDomNode("meter", args...))
+	n.Add(NewDomNode("meter", args...))
 	return n
 }
 
 func Details(args ...interface{}) *DomNode {
-	return MakeDomNode("details", args...)
+	return NewDomNode("details", args...)
 }
 
 func (n *DomNode) Details(args ...interface{}) *DomNode {
-	n.Add(MakeDomNode("details", args...))
+	n.Add(NewDomNode("details", args...))
 	return n
 }
 
 func Summary(args ...interface{}) *DomNode {
-	return MakeDomNode("summary", args...)
+	return NewDomNode("summary", args...)
 }
 
 func (n *DomNode) Summary(args ...interface{}) *DomNode {
-	n.Add(MakeDomNode("summary", args...))
+	n.Add(NewDomNode("summary", args...))
 	return n
 }
 
 func Command(args ...interface{}) *DomNode {
-	return MakeDomNode("command", args...)
+	return NewDomNode("command", args...)
 }
 
 func (n *DomNode) Command(args ...interface{}) *DomNode {
-	n.Add(MakeDomNode("command", args...))
+	n.Add(NewDomNode("command", args...))
 	return n
 }
 
 func Menu(args ...interface{}) *DomNode {
-	return MakeDomNode("menu", args...)
+	return NewDomNode("menu", args...)
 }
 
 func (n *DomNode) Menu(args ...interface{}) *DomNode {
-	n.Add(MakeDomNode("menu", args...))
+	n.Add(NewDomNode("menu", args...))
 	return n
 }

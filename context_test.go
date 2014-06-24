@@ -7,7 +7,7 @@ import (
 )
 
 func TestContext(t *testing.T) {
-	c := MakeContext(Div())
+	c := NewContext(Div())
 
 	c.Push(Ul(c))
 	for i := 0; i < 2; i++ {
