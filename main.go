@@ -41,6 +41,8 @@ func MakeDomNode(name string, args ...interface{}) *DomNode {
 			n.Add(a)
 		case string:
 			n.Add(MakeTextNode(a))
+		case *Context:
+			a.Add(n)
 		case Attr:
 			for k, v := range a {
 				n.Attrs[k] = v

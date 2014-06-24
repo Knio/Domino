@@ -1,7 +1,6 @@
 package domino
 
 import (
-	// "github.com/knio/domino/tags"
 	"testing"
 )
 
