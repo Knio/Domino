@@ -118,3 +118,8 @@ func (n *DomNode) Text(text string) *DomNode {
 	n.Add(NewTextNode(text))
 	return n
 }
+
+func (n *DomNode) Clear() *DomNode {
+	n.Children = make([]Node, 0)
+	return n
+}

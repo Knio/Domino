@@ -18,6 +18,6 @@ func TestContext(t *testing.T) {
 	Span(c, "end")
 
 	if c.String() != "<div><ul><li>hello 1</li><li>hello 2</li></ul><span>end</span></div>" {
-		t.Error("Expected a span in a div, got: ", c.String())
+		t.Error("got: ", c.String())
 	}
 }
