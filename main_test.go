@@ -17,7 +17,7 @@ func TestDiv(t *testing.T) {
 
 func TestAttrs(t *testing.T) {
 	div := Div(Attr{"html": nil, "no": "qu\"otes", "attr": "value"}).String()
-	if div != `<div html no="qu&#34;otes" attr="value"></div>` {
+	if div != `<div attr="value" html no="qu&#34;otes"></div>` {
 		t.Error("Expected a div with several attributes, got: ", div)
 	}
 

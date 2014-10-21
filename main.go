@@ -4,8 +4,7 @@ import (
 	"bytes"
 	"fmt"
 	"html"
-	// "github.com/knio/domino/tags"
-	// "strings"
+	"sort"
 )
 
 type Attr map[string]interface{}
@@ -90,9 +89,16 @@ func (n *DomNode) StringBuild(b *bytes.Buffer) {
 	b.WriteByte('<')
 	b.WriteString(n.NodeName)
 
-	for k, v := range n.Attrs {
-		b.WriteByte(' ')
+	keys := make([]string, 0, len(n.Attrs))
+	for k, _ := range n.Attrs {
+		keys = append(keys, k)
+	}
+	sort.Strings(keys)
 
+	for _, k := range keys {
+		v := n.Attrs[k]
+
+		b.WriteByte(' ')
 		if v == nil {
 			fmt.Fprint(b, k)
 			continue
