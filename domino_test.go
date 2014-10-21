@@ -20,7 +20,6 @@ func TestAttrs(t *testing.T) {
 	if div != `<div attr="value" html no="qu&#34;otes"></div>` {
 		t.Error("Expected a div with several attributes, got: ", div)
 	}
-
 }
 
 func TestChildren(t *testing.T) {
