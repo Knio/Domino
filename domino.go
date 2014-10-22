@@ -5,7 +5,12 @@ import (
 	"fmt"
 	"html"
 	"sort"
+	"strings"
 )
+
+// NSpaces can be adjusted to determine how many spaces are used in each
+// indent.
+var NSpaces = 4
 
 // Attr is a shorthand for map[string]interface{}, used when declaring
 // attributes for DomNodes.
@@ -15,7 +20,8 @@ type Attr map[string]interface{}
 // to a buffer for performance reasons.
 type Node interface {
 	String() string
-	StringBuild(*bytes.Buffer)
+	IndentString() string
+	StringBuild(*bytes.Buffer, bool, int)
 }
 
 // DomNode is a node in a dom tree. It has children nodes and attributes.
@@ -81,21 +87,45 @@ func (n *TextNode) String() string {
 	return n.Value
 }
 
+// IndentString appends it's value to the provided buffer.
+func (n *TextNode) IndentString() string {
+	return n.Value
+}
+
 // StringBuild appends it's value to the provided buffer.
-func (n *TextNode) StringBuild(b *bytes.Buffer) {
-	b.WriteString(n.Value)
+func (n *TextNode) StringBuild(b *bytes.Buffer, indent bool, depth int) {
+	if indent && depth > 0 {
+		indent := strings.Repeat(" ", NSpaces*depth)
+		b.WriteString(indent)
+		b.WriteString(strings.Replace(n.Value, "\n", "\n"+indent, -1))
+		b.WriteByte('\n')
+	} else {
+		b.WriteString(n.Value)
+	}
 }
 
 // String returns HTML for this node and all it's ancestors.
 func (n *DomNode) String() string {
 	b := &bytes.Buffer{}
-	n.StringBuild(b)
+	n.StringBuild(b, false, 0)
+	return b.String()
+}
+
+// IndentString returns HTML for this node and all it's ancestors with
+// indentation.
+func (n *DomNode) IndentString() string {
+	b := &bytes.Buffer{}
+	n.StringBuild(b, true, 0)
 	return b.String()
 }
 
 // StringBuild appends the html for this node and all it's ancestors to the
 // provided buffer.
-func (n *DomNode) StringBuild(b *bytes.Buffer) {
+func (n *DomNode) StringBuild(b *bytes.Buffer, indent bool, depth int) {
+	if indent && depth > 0 {
+		b.WriteString(strings.Repeat(" ", NSpaces*depth))
+	}
+
 	b.WriteByte('<')
 	b.WriteString(n.NodeName)
 
@@ -120,14 +150,37 @@ func (n *DomNode) StringBuild(b *bytes.Buffer) {
 
 	b.WriteByte('>')
 
-	for _, child := range n.Children {
-		child.StringBuild(b)
+	if _, ws := whiteSpaced[n.NodeName]; indent && !ws && len(n.Children) == 1 {
+		if _, ok := n.Children[0].(*TextNode); ok {
+			fmt.Fprintf(b, "%s</%s>\n", n.Children[0].String(), n.NodeName)
+			return
+		}
 	}
 
-	b.WriteByte('<')
-	b.WriteByte('/')
+	_, isVoid := voidElems[n.NodeName]
+
+	if indent && (len(n.Children) > 0 || isVoid) {
+		b.WriteByte('\n')
+	}
+
+	if isVoid {
+		return
+	}
+
+	for _, child := range n.Children {
+		child.StringBuild(b, indent, depth+1)
+	}
+
+	if indent && depth > 0 && len(n.Children) > 0 {
+		b.WriteString(strings.Repeat(" ", depth*NSpaces))
+	}
+
+	b.WriteString("</")
 	b.WriteString(n.NodeName)
 	b.WriteByte('>')
+	if indent {
+		b.WriteByte('\n')
+	}
 }
 
 // Text adds a text node with the provided text.
@@ -140,4 +193,29 @@ func (n *DomNode) Text(text string) *DomNode {
 func (n *DomNode) Clear() *DomNode {
 	n.Children = make([]Node, 0)
 	return n
+}
+
+var voidElems = map[string]struct{}{
+	"area":    struct{}{},
+	"base":    struct{}{},
+	"br":      struct{}{},
+	"col":     struct{}{},
+	"command": struct{}{},
+	"embed":   struct{}{},
+	"hr":      struct{}{},
+	"img":     struct{}{},
+	"input":   struct{}{},
+	"keygen":  struct{}{},
+	"link":    struct{}{},
+	"meta":    struct{}{},
+	"param":   struct{}{},
+	"source":  struct{}{},
+	"track":   struct{}{},
+	"wbr":     struct{}{},
+}
+
+var whiteSpaced = map[string]struct{}{
+	"style":    struct{}{},
+	"script":   struct{}{},
+	"textarea": struct{}{},
 }

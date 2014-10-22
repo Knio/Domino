@@ -38,6 +38,14 @@ func (d *Document) SetTitle(title string) {
 func (d *Document) String() string {
 	b := &bytes.Buffer{}
 	b.WriteString("<!DOCTYPE html>\n")
-	d.Html.StringBuild(b)
+	d.Html.StringBuild(b, false, 0)
+	return b.String()
+}
+
+// IndentString returns the HTML for the document with proper formatting.
+func (d *Document) IndentString() string {
+	b := &bytes.Buffer{}
+	b.WriteString("<!DOCTYPE html>\n")
+	d.Html.StringBuild(b, true, 0)
 	return b.String()
 }
