@@ -72,9 +72,9 @@ func NewTextNode(value string) *TextNode {
 }
 
 // Add a new child node.
-func (n *DomNode) Add(child Node) Node {
-	n.Children = append(n.Children, child)
-	return child
+func (n *DomNode) Add(children ...Node) Node {
+	n.Children = append(n.Children, children...)
+	return children[len(children)-1]
 }
 
 func (n *DomNode) setAttribute(k string, v interface{}) *DomNode {
