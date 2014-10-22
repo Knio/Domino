@@ -16,12 +16,23 @@ func NewContext(n *DomNode) *Context {
 		DomNode: n,
 		stack:   make([]*DomNode, 0),
 	}
-	c.Push(n)
+	c.PushNoAdd(n)
 	return c
 }
 
-// Push a node on to the stack and focus it.
+// Push a node on to the stack and focus it. Adds the given node to the current
+// focused node for convenience. See PushNoAdd if this behavior is undesired.
 func (c *Context) Push(n *DomNode) {
+	if c.DomNode != nil {
+		c.DomNode.Add(n)
+	}
+	c.stack = append(c.stack, n)
+	c.DomNode = n
+}
+
+// PushNoAdd pushes a new node on to the stack and focuses it, but does not
+// add it to the current focused node's children.
+func (c *Context) PushNoAdd(n *DomNode) {
 	c.stack = append(c.stack, n)
 	c.DomNode = n
 }
